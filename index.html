@@ -1,0 +1,71 @@
+<!DOCTYPE HTML> 
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html> <!--<![endif]-->
+	<head> 
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<meta name="viewport" content="width=device-width">
+
+		<title>Sass Buttons Mixins</title>		
+		<meta name="description" content="Sass Mixins for nice buttons">
+		<meta name="author" content="Aleksandar Goševski - www.agdizajn.com"> 
+
+		<link rel="shortcut icon" href="favicon.ico"> 
+		
+		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="assets/css/shCore.css"> 
+		<link rel="stylesheet" href="assets/css/shThemeRDark.css"> 
+		<!--[if IE]>
+			<script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head> 
+<body>
+
+<a href="https://github.com/salencebg/image-loader">
+	<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
+</a>
+
+<div class="container">
+
+	<h1>Image Loader by Aleksandar Goševski</h1>
+
+	<input type="file" class="image">
+
+	<div class="display"></div>
+
+	<div class="pre">
+		<pre class="brush: javascript;">
+	
+			$('.image').imageLoader({
+				'target' : $('.display'),
+				'width' : '100px'
+			});
+
+		</pre>
+	</div>
+
+	<a href="https://github.com/salencebg/image-loader/zipball/master" class="button">Download ZIP from GitHub</a>
+
+</div>
+
+<!-- javascript -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script>window.jQuery || document.write("<script src='assets/js/libs/jquery-1.8.0.min.js'>\x3C/script>")</script>
+
+<!-- Code highlight -->
+<script src="assets/js/shCore.js"></script>
+<script src="assets/js/shBrushJScript.js"></script>
+<script type="text/javascript">
+	SyntaxHighlighter.config.clipboardSwf = 'assets/js/clipboard.swf';
+	SyntaxHighlighter.all();
+</script>
+
+<!-- Image loader -->
+<script src="assets/js/imageLoader.jquery.min.js"></script>
+<script src="assets/js/init.js"></script>
+
+</body>
+</html>
