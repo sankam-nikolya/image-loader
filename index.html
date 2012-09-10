@@ -35,13 +35,22 @@
 	<input type="file" class="image">
 
 	<div class="display"></div>
+	
+	<button>Remove</button>
 
 	<div class="pre">
 		<pre class="brush: javascript;">
 	
 			$('.image').imageLoader({
 				'target' : $('.display'),
-				'width' : '100px'
+				'width' : '180px',
+				callback: function () {
+					console.log('done');
+				}
+			});
+
+			$('button').click(function () {
+				$('.display').imageLoader('remove');
 			});
 
 		</pre>
