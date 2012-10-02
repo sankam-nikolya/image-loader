@@ -1,13 +1,9 @@
 $(function () {
 	$('.image').imageLoader({
-		'target' : $('.display'),
+		'show' : '.display',
 		'width' : '180px',
 		callback: function () {
 			console.log('done');
 		}
-	});
-
-	$('button').click(function () {
-		$('.display').imageLoader('remove');
 	});
 });
