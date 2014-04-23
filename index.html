@@ -1,78 +1,91 @@
-<!DOCTYPE HTML>
-<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html> <!--<![endif]-->
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-		<meta name="viewport" content="width=device-width">
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Image loader by goschevski</title>
 
-		<title>Image Loader by Aleksandar Gosevski</title>
-		<meta name="description" content="Load image to dom without uploading it.">
-		<meta name="author" content="Aleksandar Goševski - www.agdizajn.com">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Image loader</h1>
+        <p>Image loader is jQuery plugin that loads image selected by input file field without uploading it on server.</p>
 
-		<link rel="shortcut icon" href="favicon.ico">
+        <p class="view"><a href="https://github.com/goschevski/image-loader">View the Project on GitHub <small>goschevski/image-loader</small></a></p>
 
-		<link rel="stylesheet" href="assets/css/style.css">
-		<link rel="stylesheet" href="assets/css/shCore.css">
-		<link rel="stylesheet" href="assets/css/shThemeRDark.css">
-		<!--[if IE]>
-			<script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-	</head>
-<body>
 
-<a href="https://github.com/salencebg/image-loader">
-	<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
-</a>
+        <ul>
+          <li><a href="https://github.com/goschevski/image-loader/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/goschevski/image-loader/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/goschevski/image-loader">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="image-loader" class="anchor" href="#image-loader"><span class="octicon octicon-link"></span></a>Image loader</h1>
 
-<div class="container">
+<p>Image loader is jQuery plugin that loads image selected by input file field without uploading it on server.</p>
 
-	<h1>Image Loader by Aleksandar Goševski</h1>
+<h2>
+<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h2>
 
-	<input type="file" class="image">
+<p>Download the <a href="https://raw.githubusercontent.com/goschevski/image-loader/master/dist/jquery.image-loader.min.js">production version</a> or the <a href="https://raw.githubusercontent.com/goschevski/image-loader/master/src/jquery.image-loader.js">development version</a>.</p>
 
-	<div class="display"></div>
+<p>In your web page:</p>
 
-	<div class="pre">
-		<pre class="brush: javascript;">
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"dist/image-loader.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
 
-			$('.image').imageLoader({
-				'target' : $('.display'),
-				'width' : '180px',
-				callback: function () {
-					console.log('done');
-				}
-			});
+<h2>
+<a name="options-and-defaults" class="anchor" href="#options-and-defaults"><span class="octicon octicon-link"></span></a>Options and defaults</h2>
 
-			$('button').click(function () {
-				$('.display').imageLoader('remove');
-			});
+<p><code>placeholder: '.image-placeholder'</code> - Selector in which image will be loaded</p>
 
-		</pre>
-	</div>
+<p><code>width: auto</code> - Width of loaded image</p>
 
-	<a href="https://github.com/salencebg/image-loader/zipball/master" class="button">Download ZIP from GitHub</a>
+<p><code>height: auto</code> - Height of loaded image</p>
 
-</div>
+<p><code>imgClass: 'img-load'</code> - Class that will be added to loaded image</p>
 
-<!-- javascript -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-<script>window.jQuery || document.write("<script src='assets/js/libs/jquery-1.8.0.min.js'>\x3C/script>")</script>
+<p><code>method: 'html'</code> - Method that will be used to add image (html (default), append or css which will add image as background of placeholder)</p>
 
-<!-- Code highlight -->
-<script src="assets/js/shCore.js"></script>
-<script src="assets/js/shBrushJScript.js"></script>
-<script type="text/javascript">
-	SyntaxHighlighter.config.clipboardSwf = 'assets/js/clipboard.swf';
-	SyntaxHighlighter.all();
-</script>
+<p><code>callback: null</code> - If you want to make something happen after loading image, callback is function for that</p>
 
-<!-- Image loader -->
-<script src="assets/js/image-loader.min.js"></script>
-<script src="assets/js/init.js"></script>
+<h2>
+<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
 
-</body>
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">'input[type="file"]'</span><span class="p">).</span><span class="nx">imageLoader</span><span class="p">({</span>
+    <span class="nx">placeholder</span><span class="o">:</span> <span class="s1">'.holder'</span><span class="p">,</span>
+    <span class="nx">width</span><span class="o">:</span> <span class="s1">'200px'</span><span class="p">,</span>
+    <span class="nx">imgClass</span><span class="o">:</span> <span class="s1">'my-custom-class'</span><span class="p">,</span>
+    <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'image added to .holder'</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+<h3>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h3>
+
+<p>Copyright (c) 2014 Aleksandar Goševski
+Licensed under the MIT, GPL licenses.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/goschevski">goschevski</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
 </html>
